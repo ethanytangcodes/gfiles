@@ -161,33 +161,31 @@
     input[type="text"]:focus {
       border-color: #d4af37;
     }
-
   </style>
   <script>
-  function checkPassword() {
-  const password = document.getElementById("passwordInput").value;
-  const correctPassword = "lowtaperfade"; // Set your password here
-  
-  if (password === correctPassword) {
-      // Unlock the hidden content
-      document.getElementById("hiddenContent").classList.add("show");
+    function checkPassword() {
+      const password = document.getElementById("passwordInput").value;
+      const correctPassword = "lowtaperfade"; // Set your password here
 
-      // Hide the modal
-      document.getElementById("passwordModal").classList.remove("show");
+      if (password === correctPassword) {
+          // Unlock the hidden content
+          document.getElementById("hiddenContent").classList.add("show");
 
-      // Allow scrolling on the body
-      document.body.style.overflow = 'auto'; // Allow scrolling
-      document.body.style.height = 'auto'; // Ensure the body's height is unrestricted
-  } else {
-      // Redirect to YouTube Rickroll if the password is incorrect
-      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-  }
-  }
+          // Hide the modal
+          document.getElementById("passwordModal").classList.remove("show");
 
+          // Allow scrolling on the body
+          document.body.style.overflow = 'auto'; // Allow scrolling
+          document.body.style.height = 'auto'; // Ensure the body's height is unrestricted
+      } else {
+          // Redirect to YouTube Rickroll if the password is incorrect
+          window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+      }
+    }
 
-
+    // Show the modal on page load
     window.onload = function() {
-      showPasswordModal(); // Show the modal on page load
+      document.getElementById("passwordModal").classList.add("show"); // Show the modal on load
     };
   </script>
 </head>
