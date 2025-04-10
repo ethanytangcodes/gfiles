@@ -164,23 +164,26 @@
 
   </style>
   <script>
-    function showPasswordModal() {
-      document.getElementById("passwordModal").classList.add("show");
-    }
-
-    function checkPassword() {
-    const password = document.getElementById("passwordInput").value;
-    const correctPassword = "lowtaperfade"; // Set your password here
-    
-    if (password === correctPassword) {
+  function checkPassword() {
+  const password = document.getElementById("passwordInput").value;
+  const correctPassword = "lowtaperfade"; // Set your password here
+  
+  if (password === correctPassword) {
+      // Unlock the hidden content
       document.getElementById("hiddenContent").classList.add("show");
+
+      // Hide the modal
       document.getElementById("passwordModal").classList.remove("show");
+
+      // Allow scrolling on the body
       document.body.style.overflow = 'auto'; // Allow scrolling
-    } else {
-        // Redirect to YouTube Rickroll if the password is incorrect
-        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
-      }
-    }
+      document.body.style.height = 'auto'; // Ensure the body's height is unrestricted
+  } else {
+      // Redirect to YouTube Rickroll if the password is incorrect
+      window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
+  }
+  }
+
 
 
     window.onload = function() {
