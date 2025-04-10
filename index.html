@@ -51,12 +51,6 @@
       background-color: #003300;
     }
 
-    .error {
-      color: red;
-      margin-top: 10px;
-      display: none;
-    }
-
     @keyframes blink {
       50% {
         opacity: 0;
@@ -69,18 +63,17 @@
   <h1>ACCESS REQUIRED ▓</h1>
   <input type="password" id="password" placeholder="Enter Access Code" />
   <button onclick="checkPassword()">ENTER</button>
-  <div class="error" id="error-msg">ACCESS DENIED. RETRY.</div>
 
   <script>
-    const correctPassword = "opensesame"; // change this to your password
+    const correctPassword = "opensesame"; // change this to your real password
 
     function checkPassword() {
       const input = document.getElementById("password").value;
       if (input === correctPassword) {
         sessionStorage.setItem("gfilesAccess", "true");
-        window.location.href = "list.html"; // where to go after login
+        window.location.href = "list.html";
       } else {
-        document.getElementById("error-msg").style.display = "block";
+        window.location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
       }
     }
 
